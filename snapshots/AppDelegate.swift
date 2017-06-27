@@ -23,6 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.clientKey = "vincentAdultMan"
             configuration.server = "https://salty-cliffs-95054.herokuapp.com/parse"
         }))
+        
+        // Persist logged in user
+        
+        if PFUser.current() != nil {
+            // make this show up on the app
+            print("Welcome back \(PFUser.current()!.username!) 😀")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeBoard = storyboard.instantiateViewController(withIdentifier: "homeBoard")
+            window?.rootViewController = homeBoard
+        }
 
         return true
     }

@@ -52,8 +52,8 @@ class LoginViewController: UIViewController {
 
         
             let newUser = PFUser()
-            newUser.username = usernameTextField.text
-            newUser.password = passwordTextField.text
+            newUser.username = usernameTextField.text ?? ""
+            newUser.password = passwordTextField.text ?? ""
         
             // Parse does the hashing
         

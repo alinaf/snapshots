@@ -10,9 +10,10 @@
 		398A9AF515EF2AE3846D2BDF /* Pods_snapshotsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C040955D9F531FEF2AE3EE75 /* Pods_snapshotsUITests.framework */; };
 		9BDBC1604EDFA29E371F965B /* Pods_snapshots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6988ED81E52748917A2C8C /* Pods_snapshots.framework */; };
 		9D5779EAEE1F18A3B47ED8A1 /* Pods_snapshotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935734F31A603242E33F9BAB /* Pods_snapshotsTests.framework */; };
+		CD1AF9031F0311E600B439C2 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1AF9021F0311E600B439C2 /* FeedViewController.swift */; };
+		CD1AF9051F031DBC00B439C2 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1AF9041F031DBC00B439C2 /* CameraViewController.swift */; };
 		CD1C664B1F02FC2900336DBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C664A1F02FC2900336DBE /* LoginViewController.swift */; };
 		CD3C30191F02F8BC0060BE72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C30181F02F8BC0060BE72 /* AppDelegate.swift */; };
-		CD3C301B1F02F8BC0060BE72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C301A1F02F8BC0060BE72 /* ViewController.swift */; };
 		CD3C301E1F02F8BC0060BE72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3C301C1F02F8BC0060BE72 /* Main.storyboard */; };
 		CD3C30201F02F8BC0060BE72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD3C301F1F02F8BC0060BE72 /* Assets.xcassets */; };
 		CD3C30231F02F8BC0060BE72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3C30211F02F8BC0060BE72 /* LaunchScreen.storyboard */; };
@@ -46,10 +47,11 @@
 		990CFB8EF5FA4767D237C5BF /* Pods-snapshotsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapshotsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snapshotsUITests/Pods-snapshotsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C040955D9F531FEF2AE3EE75 /* Pods_snapshotsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snapshotsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F7C82969C3DD4E2B667F58 /* Pods-snapshotsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapshotsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-snapshotsTests/Pods-snapshotsTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD1AF9021F0311E600B439C2 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		CD1AF9041F031DBC00B439C2 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		CD1C664A1F02FC2900336DBE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CD3C30151F02F8BC0060BE72 /* snapshots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snapshots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD3C30181F02F8BC0060BE72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD3C301A1F02F8BC0060BE72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CD3C301D1F02F8BC0060BE72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD3C301F1F02F8BC0060BE72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD3C30221F02F8BC0060BE72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,12 +142,13 @@
 			isa = PBXGroup;
 			children = (
 				CD3C30181F02F8BC0060BE72 /* AppDelegate.swift */,
-				CD3C301A1F02F8BC0060BE72 /* ViewController.swift */,
 				CD3C301C1F02F8BC0060BE72 /* Main.storyboard */,
+				CD1AF9041F031DBC00B439C2 /* CameraViewController.swift */,
 				CD1C664A1F02FC2900336DBE /* LoginViewController.swift */,
 				CD3C301F1F02F8BC0060BE72 /* Assets.xcassets */,
 				CD3C30211F02F8BC0060BE72 /* LaunchScreen.storyboard */,
 				CD3C30241F02F8BC0060BE72 /* Info.plist */,
+				CD1AF9021F0311E600B439C2 /* FeedViewController.swift */,
 			);
 			path = snapshots;
 			sourceTree = "<group>";
@@ -451,7 +454,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD1C664B1F02FC2900336DBE /* LoginViewController.swift in Sources */,
-				CD3C301B1F02F8BC0060BE72 /* ViewController.swift in Sources */,
+				CD1AF9051F031DBC00B439C2 /* CameraViewController.swift in Sources */,
+				CD1AF9031F0311E600B439C2 /* FeedViewController.swift in Sources */,
 				CD3C30191F02F8BC0060BE72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
