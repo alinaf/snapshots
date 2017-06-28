@@ -18,6 +18,22 @@ class UploadViewController: UIViewController {
         view.endEditing(true)
     }
     
+    
+    @IBAction func didPressPost(_ sender: Any) {
+        
+        Post.postUserImage(image: uploadedImage, withCaption: captionTextView.text) { (success: Bool, error: Error?) in
+            
+            if error != nil {
+                print (error?.localizedDescription as? String)
+            } else {
+                print ("Posted!")
+            }
+
+        }
+        
+    }
+    
+    
     @IBOutlet weak var imageView: UIImageView!
 
     override func viewDidLoad() {
@@ -30,6 +46,8 @@ class UploadViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
+    
         // Dispose of any resources that can be recreated.
     }
     
@@ -45,3 +63,6 @@ class UploadViewController: UIViewController {
     */
 
 }
+
+
+
