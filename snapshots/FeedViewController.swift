@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -41,8 +42,24 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let text = post["caption"]
         let author = post["author"] as? PFUser
         let username = author?.username
-        cell.usernameLabel.text = username as? String
+        cell.instaPost = post
+        
+        
+        
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        cell.usernameLabel.text = username
         cell.captionLabel.text = text as? String
+    
         
         return cell
     }

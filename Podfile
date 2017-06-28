@@ -8,6 +8,7 @@ target 'snapshots' do
   # Pods for snapshots
    
         pod 'Parse'
+	pod 'ParseUI'
    
 
   target 'snapshotsTests' do

@@ -7,14 +7,30 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class PostCell: UITableViewCell {
     
     @IBOutlet weak var captionLabel: UILabel!
     
-    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var postImageView: PFImageView!
     
     @IBOutlet weak var usernameLabel: UILabel!
+    
+    var instaPost: PFObject! {
+        
+        didSet {
+            self.postImageView.file = instaPost["media"] as? PFFile
+            self.postImageView.loadInBackground()
+        }
+        
+        
+        }
+    
+    
+    
+    
     
 
 
