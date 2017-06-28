@@ -9,9 +9,19 @@
 import UIKit
 
 class UploadViewController: UIViewController {
+    
+    var uploadedImage : UIImage? = nil
+   
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    @IBOutlet weak var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = uploadedImage
+        
 
         // Do any additional setup after loading the view.
     }

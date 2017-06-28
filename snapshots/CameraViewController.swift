@@ -10,12 +10,16 @@ import UIKit
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
+    var editedImage : UIImage? = nil
+    
+
+    
     @IBAction func takePhoto(_ sender: Any) {
         
         let vc = UIImagePickerController()
         vc.delegate = self
         vc.allowsEditing = true
-        vc.sourceType = UIImagePickerControllerSourceType.camera
+        vc.sourceType = .camera
         self.present(vc, animated: true, completion: nil)
         
         if UIImagePickerController.isSourceTypeAvailable(.camera){
@@ -25,6 +29,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             print("Camera unavailable!")
             vc.sourceType = .photoLibrary
         }
+     
         
     }
     
@@ -43,14 +48,11 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     @IBAction func choosePhoto(_ sender: Any) {
-        
         let vc = UIImagePickerController()
         vc.delegate = self
         vc.allowsEditing = true
-        vc.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        vc.sourceType =  .photoLibrary
         self.present(vc, animated: true, completion: nil)
-        
-       
     }
 
     override func viewDidLoad() {
@@ -60,17 +62,23 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+    
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+         editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+        
         
         self.performSegue(withIdentifier: "uploadSegue", sender: nil)
+        
+        dismiss(animated: true, completion: nil)
+        
+        
        // let resizedImage = resize(image: editedImage, newSize: )
         
         // use the images
         // dismiss
         
-        dismiss(animated: true, completion: nil)
-        
+     
     }
 
 
@@ -80,14 +88,21 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let uploadViewController = segue.destination as! UploadViewController
+        uploadViewController.uploadedImage = editedImage
+        
+        
+
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
 
 }

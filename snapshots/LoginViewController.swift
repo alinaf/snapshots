@@ -15,6 +15,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBAction func onTap(_ sender: Any) {
+        
+        view.endEditing(true)
+    }
+    
+ 
+
+    
+    
+    
+    
     func showAlert(){
         let alertController = UIAlertController(title: "Error", message: "Did not enter a username or password.", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
