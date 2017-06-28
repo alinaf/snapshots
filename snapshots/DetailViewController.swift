@@ -31,6 +31,18 @@ class DetailViewController: UIViewController {
         let author = instaPost?["author"] as? PFUser
         let time = instaPost?.createdAt
         print(time ?? 0)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.A"
+        let myDate = time
+        
+        dateFormatter.dateFormat = "MMM dd, YYYY"
+        let somedateString = dateFormatter.string(from: myDate!)
+        dateLabel.text = "Posted on " + somedateString
+        
+        
+        
+        
         let username = author?.username
         usernameLabel.text = username
         captionLabel.text = text as? String

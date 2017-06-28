@@ -31,9 +31,7 @@ class UploadViewController: UIViewController {
                 self.performSegue(withIdentifier: "returnToFeed", sender: nil)
               
             }
-
         }
-        
     }
     
     
