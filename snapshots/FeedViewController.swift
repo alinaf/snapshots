@@ -25,10 +25,20 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: UIControlEvents.valueChanged)
         tableView.dataSource = self
+        tableView.insertSubview(refreshControl, at: 0)
         let name = PFUser.current()!.username!
         helloLabel.text = "Hi " + name + "✨💖"
         getPosts()
+    }
+    
+    func didPullToRefresh(_ refreshControl: UIRefreshControl){
+        getPosts()
+        refreshControl.endRefreshing()
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,18 +53,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let author = post["author"] as? PFUser
         let username = author?.username
         cell.instaPost = post
-        
-        
-        
-        
-        
-        
-        
-        
-      
-        
-        
-        
         
         
         cell.usernameLabel.text = username
