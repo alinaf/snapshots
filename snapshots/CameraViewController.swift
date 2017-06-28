@@ -10,7 +10,7 @@ import UIKit
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
-    var editedImage : UIImage? = nil
+    var resizedImage : UIImage? = nil
     
 
     
@@ -65,7 +65,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-         editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+         let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+         resizedImage = resize(image: editedImage!, newSize: CGSize(width: 750, height: 750 ))
+
         
         
         self.performSegue(withIdentifier: "uploadSegue", sender: nil)
@@ -73,7 +75,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         dismiss(animated: true, completion: nil)
         
         
-       // let resizedImage = resize(image: editedImage, newSize: )
         
         // use the images
         // dismiss
@@ -95,7 +96,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let uploadViewController = segue.destination as! UploadViewController
-        uploadViewController.uploadedImage = editedImage
+        uploadViewController.uploadedImage = resizedImage
         
         
 

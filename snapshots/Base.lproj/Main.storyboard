@@ -199,6 +199,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="captionTextView" destination="Szl-K4-bVt" id="F3a-Z0-3FY"/>
                         <outlet property="imageView" destination="teq-id-WOj" id="ys7-T4-TJ9"/>
                     </connections>
                 </viewController>

@@ -11,6 +11,8 @@ import UIKit
 class UploadViewController: UIViewController {
     
     var uploadedImage : UIImage? = nil
+    
+    @IBOutlet weak var captionTextView: UITextView!
    
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
