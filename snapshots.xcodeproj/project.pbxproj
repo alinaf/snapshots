@@ -21,6 +21,7 @@
 		CD3C302E1F02F8BC0060BE72 /* snapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C302D1F02F8BC0060BE72 /* snapshotsTests.swift */; };
 		CD3C30391F02F8BC0060BE72 /* snapshotsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C30381F02F8BC0060BE72 /* snapshotsUITests.swift */; };
 		CD8FC1961F042C6000265EF7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FC1951F042C6000265EF7 /* Post.swift */; };
+		CD8FC1981F04457800265EF7 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FC1971F04457700265EF7 /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		CD3C30381F02F8BC0060BE72 /* snapshotsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snapshotsUITests.swift; sourceTree = "<group>"; };
 		CD3C303A1F02F8BC0060BE72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD8FC1951F042C6000265EF7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		CD8FC1971F04457700265EF7 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		FE6988ED81E52748917A2C8C /* Pods_snapshots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snapshots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,6 +157,7 @@
 				CD3C30241F02F8BC0060BE72 /* Info.plist */,
 				CD1AF9021F0311E600B439C2 /* FeedViewController.swift */,
 				CD8FC1951F042C6000265EF7 /* Post.swift */,
+				CD8FC1971F04457700265EF7 /* PostCell.swift */,
 			);
 			path = snapshots;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD8FC1981F04457800265EF7 /* PostCell.swift in Sources */,
 				CD1C664B1F02FC2900336DBE /* LoginViewController.swift in Sources */,
 				CD1AF9071F032DF800B439C2 /* UploadViewController.swift in Sources */,
 				CD1AF9051F031DBC00B439C2 /* CameraViewController.swift in Sources */,

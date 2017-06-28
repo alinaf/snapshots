@@ -9,9 +9,11 @@
 import UIKit
 import Parse
 
-class FeedViewController: UIViewController{
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var helloLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    var allPosts: [PFObject]?
     @IBAction func didLogOut(_ sender: UIButton) {
         
         PFUser.logOutInBackground { (error: Error?) in
@@ -22,9 +24,43 @@ class FeedViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
         let name = PFUser.current()!.username!
         helloLabel.text = "Hi " + name + "✨💖"
+        getPosts()
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allPosts?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        
+        let post = allPosts![indexPath.row]
+        let text = post["caption"]
+        cell.captionLabel.text = text as? String
+        
+        return cell
+    }
+    
+    func getPosts() {
+        var query = PFQuery(className: "Post")
+        query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+            if error == nil {
+                self.allPosts = posts
+                self.tableView.reloadData()
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
+
+    
+    }
+    
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

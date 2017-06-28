@@ -11,6 +11,7 @@ import UIKit
 class UploadViewController: UIViewController {
     
     var uploadedImage : UIImage? = nil
+  
     
     @IBOutlet weak var captionTextView: UITextView!
    
@@ -24,9 +25,11 @@ class UploadViewController: UIViewController {
         Post.postUserImage(image: uploadedImage, withCaption: captionTextView.text) { (success: Bool, error: Error?) in
             
             if error != nil {
-                print (error?.localizedDescription as? String)
+                print (error?.localizedDescription ?? "")
             } else {
                 print ("Posted!")
+                self.performSegue(withIdentifier: "returnToFeed", sender: nil)
+              
             }
 
         }
