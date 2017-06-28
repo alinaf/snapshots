@@ -22,6 +22,7 @@
 		CD3C30391F02F8BC0060BE72 /* snapshotsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C30381F02F8BC0060BE72 /* snapshotsUITests.swift */; };
 		CD8FC1961F042C6000265EF7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FC1951F042C6000265EF7 /* Post.swift */; };
 		CD8FC1981F04457800265EF7 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FC1971F04457700265EF7 /* PostCell.swift */; };
+		CD8FC19A1F0463CF00265EF7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FC1991F0463CF00265EF7 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		CD3C303A1F02F8BC0060BE72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD8FC1951F042C6000265EF7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CD8FC1971F04457700265EF7 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		CD8FC1991F0463CF00265EF7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FE6988ED81E52748917A2C8C /* Pods_snapshots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snapshots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -147,15 +149,12 @@
 		CD3C30171F02F8BC0060BE72 /* snapshots */ = {
 			isa = PBXGroup;
 			children = (
+				CD8FC19B1F0463DC00265EF7 /* ViewControllers */,
 				CD3C30181F02F8BC0060BE72 /* AppDelegate.swift */,
 				CD3C301C1F02F8BC0060BE72 /* Main.storyboard */,
-				CD1AF9061F032DF800B439C2 /* UploadViewController.swift */,
-				CD1AF9041F031DBC00B439C2 /* CameraViewController.swift */,
-				CD1C664A1F02FC2900336DBE /* LoginViewController.swift */,
 				CD3C301F1F02F8BC0060BE72 /* Assets.xcassets */,
 				CD3C30211F02F8BC0060BE72 /* LaunchScreen.storyboard */,
 				CD3C30241F02F8BC0060BE72 /* Info.plist */,
-				CD1AF9021F0311E600B439C2 /* FeedViewController.swift */,
 				CD8FC1951F042C6000265EF7 /* Post.swift */,
 				CD8FC1971F04457700265EF7 /* PostCell.swift */,
 			);
@@ -178,6 +177,18 @@
 				CD3C303A1F02F8BC0060BE72 /* Info.plist */,
 			);
 			path = snapshotsUITests;
+			sourceTree = "<group>";
+		};
+		CD8FC19B1F0463DC00265EF7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD8FC1991F0463CF00265EF7 /* DetailViewController.swift */,
+				CD1AF9061F032DF800B439C2 /* UploadViewController.swift */,
+				CD1AF9041F031DBC00B439C2 /* CameraViewController.swift */,
+				CD1C664A1F02FC2900336DBE /* LoginViewController.swift */,
+				CD1AF9021F0311E600B439C2 /* FeedViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,6 +480,7 @@
 				CD8FC1961F042C6000265EF7 /* Post.swift in Sources */,
 				CD1AF9031F0311E600B439C2 /* FeedViewController.swift in Sources */,
 				CD3C30191F02F8BC0060BE72 /* AppDelegate.swift in Sources */,
+				CD8FC19A1F0463CF00265EF7 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
