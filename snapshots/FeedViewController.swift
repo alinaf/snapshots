@@ -39,6 +39,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let post = allPosts![indexPath.row]
         let text = post["caption"]
+        let author = post["author"] as? PFUser
+        let username = author?.username
+        cell.usernameLabel.text = username as? String
         cell.captionLabel.text = text as? String
         
         return cell
@@ -46,6 +49,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func getPosts() {
         var query = PFQuery(className: "Post")
+        query.order(byDescending: "createdAt")
+        query.includeKey("author")
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
             if error == nil {
                 self.allPosts = posts
@@ -55,7 +60,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
 
-    
     }
     
     
