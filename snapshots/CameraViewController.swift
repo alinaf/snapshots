@@ -10,7 +10,48 @@ import UIKit
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
-    var dismissIsTrue = false
+    @IBAction func takePhoto(_ sender: Any) {
+        
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.allowsEditing = true
+        vc.sourceType = UIImagePickerControllerSourceType.camera
+        self.present(vc, animated: true, completion: nil)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            print("Camera available!")
+            vc.sourceType = .camera
+        } else {
+            print("Camera unavailable!")
+            vc.sourceType = .photoLibrary
+        }
+        
+    }
+    
+    func resize(image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        resizeImageView.contentMode = UIViewContentMode.scaleAspectFill
+        resizeImageView.image = image
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+    
+    
+    
+    @IBAction func choosePhoto(_ sender: Any) {
+        
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.allowsEditing = true
+        vc.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        self.present(vc, animated: true, completion: nil)
+        
+       
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,38 +63,16 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
+        self.performSegue(withIdentifier: "uploadSegue", sender: nil)
+       // let resizedImage = resize(image: editedImage, newSize: )
+        
         // use the images
         // dismiss
         
         dismiss(animated: true, completion: nil)
-        dismissIsTrue = true
+        
     }
 
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        
-        if !dismissIsTrue {
-        
-            let vc = UIImagePickerController()
-            vc.delegate = self
-            vc.allowsEditing = true
-            vc.sourceType = UIImagePickerControllerSourceType.camera
-        
-            self.present(vc, animated: true, completion: nil)
-        
-            if UIImagePickerController.isSourceTypeAvailable(.camera){
-                print("Camera available!")
-                vc.sourceType = .camera
-            } else {
-                print("Camera unavailable!")
-                vc.sourceType = .photoLibrary
-            }
-            
-        }
-        
-        else {print("yay")}
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

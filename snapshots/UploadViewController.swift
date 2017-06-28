@@ -1,5 +1,5 @@
 //
-//  FeedViewController.swift
+//  UploadViewController.swift
 //  snapshots
 //
 //  Created by Alina Abidi on 6/27/17.
@@ -7,25 +7,15 @@
 //
 
 import UIKit
-import Parse
 
-class FeedViewController: UIViewController{
-    
-    @IBOutlet weak var helloLabel: UILabel!
-    @IBAction func didLogOut(_ sender: UIButton) {
-        
-        PFUser.logOutInBackground { (error: Error?) in
-            self.performSegue(withIdentifier: "logOutSegue", sender: nil)
-        }
-    }
-    
-    
+class UploadViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let name = PFUser.current()!.username!
-        helloLabel.text = "Hi " + name + "✨💖"
+
+        // Do any additional setup after loading the view.
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
