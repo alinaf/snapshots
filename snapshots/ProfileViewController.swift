@@ -36,9 +36,12 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         numPosts = allPosts?.count ?? 0
         
         // I put this here because viewDidLoad was too fast
+        
         let postNumString = String(numPosts)
         postNumberLabel.text = postNumString + " posts"
         
+        let name = PFUser.current()!.username!
+        usernameLabel.text = "@" + name
         
         
         return numPosts
@@ -61,6 +64,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         var query = PFQuery(className: "Post")
         query.order(byDescending: "createdAt")
         query.includeKey("author")
+        query.whereKey("author", equalTo: PFUser.current())
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
             if error == nil {
                 self.allPosts = posts
