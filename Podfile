@@ -9,6 +9,8 @@ target 'snapshots' do
    
         pod 'Parse'
 	pod 'ParseUI'
+ 	pod 'UIImageColors'
+  	
    
 
   target 'snapshotsTests' do

@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UIIma
     var numPosts = 0
 
     
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var postNumberLabel: UILabel!
@@ -43,6 +44,9 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UIIma
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        getProfPic()
+    }
     
     func resize(image: UIImage, newSize: CGSize) -> UIImage {
         let resizeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
@@ -72,6 +76,9 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UIIma
                 print ("pic sent to parse!")
             }
         }
+        
+        getProfPic()
+
     }
     
     override func viewDidLoad() {
@@ -128,6 +135,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UIIma
     func getProfPic() {
         let query = PFQuery(className: "ProfilePic")
         query.includeKey("author")
+        query.order(byDescending: "createdAt")
         query.whereKey("author", equalTo: PFUser.current())
         query.getFirstObjectInBackground { (post: PFObject?, error: Error?) in
             if error == nil {
