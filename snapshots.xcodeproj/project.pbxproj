@@ -153,15 +153,14 @@
 		CD3C30171F02F8BC0060BE72 /* snapshots */ = {
 			isa = PBXGroup;
 			children = (
+				CDAA8EDF1F05926C0014844B /* Cells */,
 				CD8FC19B1F0463DC00265EF7 /* ViewControllers */,
 				CD3C30181F02F8BC0060BE72 /* AppDelegate.swift */,
 				CD3C301C1F02F8BC0060BE72 /* Main.storyboard */,
-				CDAA8EDD1F05788D0014844B /* ImageCell.swift */,
 				CD3C301F1F02F8BC0060BE72 /* Assets.xcassets */,
 				CD3C30211F02F8BC0060BE72 /* LaunchScreen.storyboard */,
 				CD3C30241F02F8BC0060BE72 /* Info.plist */,
 				CD8FC1951F042C6000265EF7 /* Post.swift */,
-				CD8FC1971F04457700265EF7 /* PostCell.swift */,
 			);
 			path = snapshots;
 			sourceTree = "<group>";
@@ -195,6 +194,15 @@
 				CD1AF9021F0311E600B439C2 /* FeedViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CDAA8EDF1F05926C0014844B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CDAA8EDD1F05788D0014844B /* ImageCell.swift */,
+				CD8FC1971F04457700265EF7 /* PostCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -30,8 +30,7 @@ class DetailViewController: UIViewController {
         let text = instaPost?["caption"]
         let author = instaPost?["author"] as? PFUser
         let time = instaPost?.createdAt
-        print(time ?? 0)
-        
+            
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.A"
         let myDate = time

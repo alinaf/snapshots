@@ -63,7 +63,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func getPosts() {
-        var query = PFQuery(className: "Post")
+        let query = PFQuery(className: "Post")
         query.order(byDescending: "createdAt")
         query.includeKey("author")
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
@@ -71,7 +71,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.allPosts = posts
                 self.tableView.reloadData()
             } else {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "")
             }
         }
     }

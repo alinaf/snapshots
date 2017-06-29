@@ -61,7 +61,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
     
     
     func getPosts() {
-        var query = PFQuery(className: "Post")
+        let query = PFQuery(className: "Post")
         query.order(byDescending: "createdAt")
         query.includeKey("author")
         query.whereKey("author", equalTo: PFUser.current())
@@ -70,7 +70,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
                 self.allPosts = posts
                 self.collectionView.reloadData()
             } else {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription as Any)
             }
         }
     }
@@ -86,14 +86,15 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let cell = sender as! UICollectionViewCell
+        if let indexPath = collectionView.indexPath(for: cell){
+            let post = allPosts?[indexPath.row]
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.instaPost = post
+        }
+        
     }
-    */
+
 
 }
