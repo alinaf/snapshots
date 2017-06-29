@@ -39,10 +39,6 @@ class DetailViewController: UIViewController {
         dateFormatter.dateFormat = "MMM dd, YYYY"
         let somedateString = dateFormatter.string(from: myDate!)
         dateLabel.text = "Posted on " + somedateString
-        
-        
-        
-        
         let username = author?.username
         usernameLabel.text = username
         captionLabel.text = text as? String
