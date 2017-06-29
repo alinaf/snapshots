@@ -20,11 +20,6 @@ class LoginViewController: UIViewController {
         view.endEditing(true)
     }
     
- 
-
-    
-    
-    
     
     func showAlert(){
         let alertController = UIAlertController(title: "Error", message: "Did not enter a username or password.", preferredStyle: .alert)
@@ -79,10 +74,7 @@ class LoginViewController: UIViewController {
         }
     }
 
-    
-    
-    
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

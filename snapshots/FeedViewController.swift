@@ -15,12 +15,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var allPosts: [PFObject]?
-    @IBAction func didLogOut(_ sender: UIButton) {
-        
-        PFUser.logOutInBackground { (error: Error?) in
-            self.performSegue(withIdentifier: "logOutSegue", sender: nil)
-        }
-    }
+   
     
     
     override func viewDidLoad() {

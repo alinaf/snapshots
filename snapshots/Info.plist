@@ -8,11 +8,10 @@
 	<string>Need camera access for uploading Images</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
-	<key>AppTransportSecurity</key>
-	<dict>
-		<key>AllowsArbitraryLoads</key>
-		<true/>
-	</dict>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key><true/>
+    </dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

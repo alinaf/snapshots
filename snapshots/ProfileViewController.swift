@@ -20,6 +20,13 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var postNumberLabel: UILabel!
     
+    @IBAction func logOut(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("logoutNotification"), object: nil)
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
