@@ -13,23 +13,36 @@ import ParseUI
 class ProfileViewController: UIViewController, UICollectionViewDataSource {
     
     var allPosts: [PFObject]?
+    var numPosts = 0
     
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet var postNumberLabel: UIView!
+    @IBOutlet weak var postNumberLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         getPosts()
         
+  
+        
         // Do any additional setup after loading the view.
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allPosts?.count ?? 0
+     
+        numPosts = allPosts?.count ?? 0
+        
+        // I put this here because viewDidLoad was too fast
+        let postNumString = String(numPosts)
+        postNumberLabel.text = postNumString + " posts"
+        
+        
+        
+        return numPosts
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
