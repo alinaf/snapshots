@@ -1,20 +1,20 @@
  //
-//  ProfileViewController.swift
-//  snapshots
-//
-//  Created by Alina Abidi on 6/28/17.
-//  Copyright © 2017 Alina Abidi. All rights reserved.
-//
-
-import UIKit
-import Parse
-import ParseUI
-
-class ProfileViewController: UIViewController, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+ //  ProfileViewController.swift
+ //  snapshots
+ //
+ //  Created by Alina Abidi on 6/28/17.
+ //  Copyright © 2017 Alina Abidi. All rights reserved.
+ //
+ 
+ import UIKit
+ import Parse
+ import ParseUI
+ 
+ class ProfileViewController: UIViewController, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     var allPosts: [PFObject]?
     var numPosts = 0
-
+    
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,9 +31,25 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UIIma
         
         let vc = UIImagePickerController()
         vc.delegate = self
-        vc.allowsEditing = true
-        vc.sourceType = .camera
-        self.present(vc, animated: true, completion: nil)
+        
+        //alert 
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+            (UIAlertAction) in
+            vc.sourceType = .camera
+            vc.allowsEditing = true
+            self.present(vc, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {
+            (UIAlertAction) in
+            vc.sourceType = .photoLibrary
+            vc.allowsEditing = true
+            self.present(vc, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+       
         
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             print("Camera available!")
@@ -66,7 +82,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UIIma
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
         let resizedImage = resize(image: editedImage!, newSize: CGSize(width: 750, height: 750 ))
-                dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
         // upload image to Parse
         Post.uploadProfPic(image: resizedImage) { (success: Bool, error: Error?) in
@@ -78,7 +94,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UIIma
         }
         
         getProfPic()
-
+        
     }
     
     override func viewDidLoad() {
@@ -90,7 +106,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UIIma
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-     
+        
         numPosts = allPosts?.count ?? 0
         
         // I put this here because viewDidLoad was too fast
@@ -113,7 +129,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UIIma
         return cell
         
         
-       // return cell
+        // return cell
     }
     
     
@@ -146,20 +162,20 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UIIma
                 print(error?.localizedDescription as Any)
             }
         }
-
+        
     }
-        
-        
     
     
-
-
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UICollectionViewCell
         if let indexPath = collectionView.indexPath(for: cell){
@@ -169,6 +185,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UIIma
         }
         
     }
-
-
-}
+    
+    
+ }
