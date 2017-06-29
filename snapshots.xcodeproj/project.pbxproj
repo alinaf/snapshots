@@ -24,6 +24,7 @@
 		CD8FC1981F04457800265EF7 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FC1971F04457700265EF7 /* PostCell.swift */; };
 		CD8FC19A1F0463CF00265EF7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FC1991F0463CF00265EF7 /* DetailViewController.swift */; };
 		CDAA8EDC1F0488D50014844B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA8EDB1F0488D50014844B /* ProfileViewController.swift */; };
+		CDAA8EDE1F05788D0014844B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA8EDD1F05788D0014844B /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		CD8FC1971F04457700265EF7 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		CD8FC1991F0463CF00265EF7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CDAA8EDB1F0488D50014844B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CDAA8EDD1F05788D0014844B /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		FE6988ED81E52748917A2C8C /* Pods_snapshots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snapshots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,7 +156,7 @@
 				CD8FC19B1F0463DC00265EF7 /* ViewControllers */,
 				CD3C30181F02F8BC0060BE72 /* AppDelegate.swift */,
 				CD3C301C1F02F8BC0060BE72 /* Main.storyboard */,
-				CDAA8EDB1F0488D50014844B /* ProfileViewController.swift */,
+				CDAA8EDD1F05788D0014844B /* ImageCell.swift */,
 				CD3C301F1F02F8BC0060BE72 /* Assets.xcassets */,
 				CD3C30211F02F8BC0060BE72 /* LaunchScreen.storyboard */,
 				CD3C30241F02F8BC0060BE72 /* Info.plist */,
@@ -188,6 +190,7 @@
 				CD8FC1991F0463CF00265EF7 /* DetailViewController.swift */,
 				CD1AF9061F032DF800B439C2 /* UploadViewController.swift */,
 				CD1AF9041F031DBC00B439C2 /* CameraViewController.swift */,
+				CDAA8EDB1F0488D50014844B /* ProfileViewController.swift */,
 				CD1C664A1F02FC2900336DBE /* LoginViewController.swift */,
 				CD1AF9021F0311E600B439C2 /* FeedViewController.swift */,
 			);
@@ -485,6 +488,7 @@
 				CDAA8EDC1F0488D50014844B /* ProfileViewController.swift in Sources */,
 				CD3C30191F02F8BC0060BE72 /* AppDelegate.swift in Sources */,
 				CD8FC19A1F0463CF00265EF7 /* DetailViewController.swift in Sources */,
+				CDAA8EDE1F05788D0014844B /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,9 +24,7 @@ class PostCell: UITableViewCell {
             self.postImageView.file = instaPost["media"] as? PFFile
             self.postImageView.loadInBackground()
         }
-        
-        
-        }
+    }
     
     
     
