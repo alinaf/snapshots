@@ -79,7 +79,7 @@
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         // get image and resize it
-        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+       // let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
         let resizedImage = resize(image: editedImage!, newSize: CGSize(width: 750, height: 750 ))
         dismiss(animated: true, completion: nil)
@@ -90,10 +90,10 @@
                 print (error?.localizedDescription ?? "")
             } else {
                 print ("pic sent to parse!")
+                self.getProfPic()
             }
         }
         
-        getProfPic()
         
     }
     

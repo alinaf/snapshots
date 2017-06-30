@@ -253,43 +253,6 @@
             </objects>
             <point key="canvasLocation" x="3519" y="1628"/>
         </scene>
-        <!--Camera View Controller-->
-        <scene sceneID="Wsc-I3-pI2">
-            <objects>
-                <viewController id="5md-we-WZA" customClass="CameraViewController" customModule="snapshots" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Fw5-iU-chS"/>
-                        <viewControllerLayoutGuide type="bottom" id="ObR-Ni-eXc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UZO-gh-Jre">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKh-z1-YO0">
-                                <rect key="frame" x="150" y="154" width="89" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take a photo"/>
-                                <connections>
-                                    <action selector="takePhoto:" destination="5md-we-WZA" eventType="touchUpInside" id="tkj-r6-xNh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcV-hG-c2b">
-                                <rect key="frame" x="140" y="236" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Choose a photo"/>
-                                <connections>
-                                    <action selector="choosePhoto:" destination="5md-we-WZA" eventType="touchUpInside" id="RkE-g3-6Q6"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="oAV-lf-9MZ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hs6-dt-OBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5174" y="2321"/>
-        </scene>
         <!--Upload View Controller-->
         <scene sceneID="sT0-Le-xbR">
             <objects>
@@ -305,7 +268,7 @@
                             <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="teq-id-WOj" customClass="PFImageView">
                                 <rect key="frame" x="27" y="86" width="322" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.75307138429999998" green="0.77439488310000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.41568627450000001" green="0.6588235294" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="EIs-YB-sWC" appends="YES" id="mnZ-rD-ZRW"/>
@@ -326,6 +289,17 @@
                                     <action selector="didPressPost:" destination="u1r-2g-Rsy" eventType="touchUpInside" id="Ufb-9a-Zt2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4G-ti-eUg">
+                                <rect key="frame" x="101" y="86" width="198" height="225"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="300"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSv-cz-GVb" customClass="PFImageView">
+                                <rect key="frame" x="26" y="86" width="322" height="279"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -336,6 +310,7 @@
                     <navigationItem key="navigationItem" id="bir-lP-GJG"/>
                     <connections>
                         <outlet property="captionTextView" destination="Szl-K4-bVt" id="F3a-Z0-3FY"/>
+                        <outlet property="displayImage" destination="wSv-cz-GVb" id="9Ob-Ig-Y7v"/>
                         <outlet property="uploadImageView" destination="teq-id-WOj" id="dJw-mf-lRc"/>
                         <segue destination="FzS-fK-xHs" kind="presentation" identifier="returnToFeed" id="Fez-SK-8wy"/>
                     </connections>
@@ -352,7 +327,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="6330" y="1628"/>
+            <point key="canvasLocation" x="6329.5" y="1627.5"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="gzI-so-6Lp">
@@ -550,7 +525,7 @@
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ofO-lu-tBs"/>
+        <segue reference="Fez-SK-8wy"/>
         <segue reference="D36-TY-h1o"/>
     </inferredMetricsTieBreakers>
 </document>
