@@ -99,6 +99,8 @@
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        profileImageView.layer.cornerRadius = 39
+        profileImageView.clipsToBounds = true
         collectionView.dataSource = self
         getPosts()
         getProfPic()
@@ -164,10 +166,6 @@
         }
         
     }
-    
-    
-    
-    
     
     
     override func didReceiveMemoryWarning() {

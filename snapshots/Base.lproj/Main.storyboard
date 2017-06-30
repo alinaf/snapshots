@@ -245,13 +245,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="oAV-lf-9MZ"/>
-                    <connections>
-                        <segue destination="u1r-2g-Rsy" kind="show" identifier="uploadSegue" id="vVx-mf-bne"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hs6-dt-OBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5422" y="1628"/>
+            <point key="canvasLocation" x="5174" y="2321"/>
         </scene>
         <!--Upload View Controller-->
         <scene sceneID="sT0-Le-xbR">
@@ -265,9 +262,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="teq-id-WOj">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="teq-id-WOj" customClass="PFImageView">
                                 <rect key="frame" x="27" y="86" width="322" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.75307138429999998" green="0.77439488310000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="EIs-YB-sWC" appends="YES" id="mnZ-rD-ZRW"/>
+                                </connections>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter a caption here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Szl-K4-bVt">
                                 <rect key="frame" x="27" y="386" width="322" height="116"/>
@@ -291,9 +293,10 @@
                             <outletCollection property="gestureRecognizers" destination="2e7-sq-uuL" appends="YES" id="ymE-r3-8EM"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="bir-lP-GJG"/>
                     <connections>
                         <outlet property="captionTextView" destination="Szl-K4-bVt" id="F3a-Z0-3FY"/>
-                        <outlet property="imageView" destination="teq-id-WOj" id="ys7-T4-TJ9"/>
+                        <outlet property="uploadImageView" destination="teq-id-WOj" id="dJw-mf-lRc"/>
                         <segue destination="FzS-fK-xHs" kind="presentation" identifier="returnToFeed" id="Fez-SK-8wy"/>
                     </connections>
                 </viewController>
@@ -301,6 +304,11 @@
                 <tapGestureRecognizer id="2e7-sq-uuL">
                     <connections>
                         <action selector="onTap:" destination="u1r-2g-Rsy" id="WCI-Xm-tEq"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="EIs-YB-sWC">
+                    <connections>
+                        <action selector="selectCamera:" destination="u1r-2g-Rsy" id="iXQ-yn-8Aw"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -319,7 +327,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jwd-JM-Krw" customClass="PFImageView">
-                                <rect key="frame" x="24" y="84" width="81" height="77"/>
+                                <rect key="frame" x="24" y="84" width="76" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.4213750966" blue="0.84409421490000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <gestureRecognizers/>
@@ -439,7 +447,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="5md-we-WZA" kind="relationship" relationship="rootViewController" id="zyB-qQ-jcm"/>
+                        <segue destination="u1r-2g-Rsy" kind="relationship" relationship="rootViewController" id="Z3j-GY-XGe"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZi-1a-Pgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -501,7 +509,7 @@
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ofO-lu-tBs"/>
-        <segue reference="V1d-M0-iDQ"/>
+        <segue reference="Fez-SK-8wy"/>
+        <segue reference="D36-TY-h1o"/>
     </inferredMetricsTieBreakers>
 </document>

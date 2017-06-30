@@ -7,12 +7,62 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
-class UploadViewController: UIViewController {
+class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var uploadedImage : UIImage? = nil
   
+    @IBOutlet weak var uploadImageView: PFImageView!
     
+    @IBAction func selectCamera(_ sender: Any) {
+        
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        
+        //alert
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+            (UIAlertAction) in
+            vc.sourceType = .camera
+            vc.allowsEditing = true
+            self.present(vc, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {
+            (UIAlertAction) in
+            vc.sourceType = .photoLibrary
+            vc.allowsEditing = true
+            self.present(vc, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            print("Camera available!")
+            vc.sourceType = .camera
+        } else {
+            print("Camera unavailable!")
+            vc.sourceType = .photoLibrary
+        }
+  
+    }
+    
+    func resize(image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        resizeImageView.contentMode = UIViewContentMode.scaleAspectFill
+        resizeImageView.image = image
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+    
+
     @IBOutlet weak var captionTextView: UITextView!
    
     @IBAction func onTap(_ sender: Any) {
@@ -34,12 +84,20 @@ class UploadViewController: UIViewController {
         }
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+        uploadedImage = resize(image: editedImage!, newSize: CGSize(width: 750, height: 750 ))
+        dismiss(animated: true, completion: nil)
+    }
     
-    @IBOutlet weak var imageView: UIImageView!
+    
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = uploadedImage
+       uploadImageView.image = uploadedImage
         
 
         // Do any additional setup after loading the view.

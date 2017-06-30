@@ -12,8 +12,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     var resizedImage : UIImage? = nil
     
-
-    
     @IBAction func takePhoto(_ sender: Any) {
         
         let vc = UIImagePickerController()
