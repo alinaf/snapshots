@@ -73,6 +73,8 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    
 
 
 
@@ -99,3 +101,30 @@ class LoginViewController: UIViewController {
     */
 
 }
+
+
+@IBDesignable
+extension UILabel {
+    @IBInspectable
+    public var kerning:CGFloat {
+        set{
+            if let currentAttibutedText = self.attributedText {
+                let attribString = NSMutableAttributedString(attributedString: currentAttibutedText)
+                attribString.addAttributes([NSKernAttributeName:newValue], range:NSMakeRange(0, currentAttibutedText.length))
+                self.attributedText = attribString
+            }
+        } get {
+            var kerning:CGFloat = 0
+            if let attributedText = self.attributedText {
+                attributedText.enumerateAttribute(NSKernAttributeName,
+                                                  in: NSMakeRange(0, attributedText.length),
+                                                  options: .init(rawValue: 0)) { (value, range, stop) in
+                                                    kerning = value as? CGFloat ?? 0
+                }
+            }
+            return kerning
+        }
+    }
+}
+
+

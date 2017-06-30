@@ -12,6 +12,9 @@
         <array key="Kollektif.ttf">
             <string>Kollektif</string>
         </array>
+        <array key="Mohave.otf">
+            <string>Mohave</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Login View Controller-->
@@ -43,7 +46,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWe-5c-Aga">
                                 <rect key="frame" x="66" y="433" width="67" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Mohave" family="Mohave" pointSize="17"/>
                                 <state key="normal" title="Sign in">
                                     <color key="titleColor" red="0.57325148582458496" green="0.39436298608779907" blue="0.63144606351852417" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -51,12 +54,19 @@
                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KPO-Nb-pZV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnu-W5-ugs">
-                                <rect key="frame" x="228" y="433" width="81" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cnu-W5-ugs">
+                                <rect key="frame" x="241" y="438" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" red="0.63278234004974365" green="0.29529955983161926" blue="0.24713768064975739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Register">
+                                            <attributes>
+                                                <color key="NSColor" red="0.63278234004974365" green="0.29529955983161926" blue="0.24713768064975739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="17" name="Mohave"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
                                     <action selector="onRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LZ3-5K-BwZ"/>
@@ -443,7 +453,7 @@
                     <tabBarItem key="tabBarItem" title="Camera" image="insta_camera_btn" selectedImage="insta_camera_btn" id="3Al-Jg-qD3"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TGG-Bv-2SP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TGG-Bv-2SP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -467,7 +477,7 @@
                     <tabBarItem key="tabBarItem" title="Feed" image="feed_tab" selectedImage="feed_tab" id="NI6-Nq-a78"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uio-WX-BMj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Uio-WX-BMj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -491,7 +501,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="profile_tab" selectedImage="profile_tab" id="btH-AD-T1z"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qOh-0q-9QA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qOh-0q-9QA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
