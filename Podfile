@@ -10,6 +10,8 @@ target 'snapshots' do
         pod 'Parse'
 	pod 'ParseUI'
  	pod 'UIImageColors'
+	pod 'RSKPlaceholderTextView'
+
   	
    
 

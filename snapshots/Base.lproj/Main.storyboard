@@ -274,12 +274,15 @@
                                     <outletCollection property="gestureRecognizers" destination="EIs-YB-sWC" appends="YES" id="mnZ-rD-ZRW"/>
                                 </connections>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter a caption here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Szl-K4-bVt">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Szl-K4-bVt" customClass="RSKPlaceholderTextView" customModule="RSKPlaceholderTextView">
                                 <rect key="frame" x="27" y="386" width="322" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter caption here!"/>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rs2-5c-yHB">
                                 <rect key="frame" x="295" y="565" width="42" height="30"/>
@@ -309,7 +312,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bir-lP-GJG"/>
                     <connections>
-                        <outlet property="captionTextView" destination="Szl-K4-bVt" id="F3a-Z0-3FY"/>
+                        <outlet property="captionTextView" destination="Szl-K4-bVt" id="Bt5-NC-W4R"/>
                         <outlet property="displayImage" destination="wSv-cz-GVb" id="9Ob-Ig-Y7v"/>
                         <outlet property="uploadImageView" destination="teq-id-WOj" id="dJw-mf-lRc"/>
                         <segue destination="FzS-fK-xHs" kind="presentation" identifier="returnToFeed" id="Fez-SK-8wy"/>

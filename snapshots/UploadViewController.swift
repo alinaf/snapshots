@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 import ParseUI
+import RSKPlaceholderTextView
+
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -65,7 +67,8 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
 
-    @IBOutlet weak var captionTextView: UITextView!
+    @IBOutlet weak var captionTextView: RSKPlaceholderTextView!
+   
    
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
