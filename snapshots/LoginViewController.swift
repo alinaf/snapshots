@@ -104,6 +104,7 @@ class LoginViewController: UIViewController {
 
 
 @IBDesignable
+
 extension UILabel {
     @IBInspectable
     public var kerning:CGFloat {

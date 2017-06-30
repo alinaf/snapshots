@@ -43,25 +43,29 @@
                                 <fontDescription key="fontDescription" name="Kollektif" family="Kollektif" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pink_purple.png" translatesAutoresizingMaskIntoConstraints="NO" id="K44-1K-MfZ">
+                                <rect key="frame" x="57" y="80" width="263" height="149"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWe-5c-Aga">
-                                <rect key="frame" x="66" y="433" width="67" height="39"/>
+                                <rect key="frame" x="38" y="441" width="158" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Mohave" family="Mohave" pointSize="17"/>
-                                <state key="normal" title="Sign in">
-                                    <color key="titleColor" red="0.57325148582458496" green="0.39436298608779907" blue="0.63144606351852417" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title=" ">
+                                    <color key="titleColor" red="0.71458220481872559" green="0.49086502194404602" blue="0.78829312324523926" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KPO-Nb-pZV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cnu-W5-ugs">
-                                <rect key="frame" x="241" y="438" width="56" height="30"/>
+                                <rect key="frame" x="231" y="440" width="157" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Register">
+                                        <fragment content=" ">
                                             <attributes>
-                                                <color key="NSColor" red="0.63278234004974365" green="0.29529955983161926" blue="0.24713768064975739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="NSColor" red="0.63278234004974365" green="0.43855930190965725" blue="0.53818334047418614" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <font key="NSFont" size="17" name="Mohave"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -72,10 +76,30 @@
                                     <action selector="onRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LZ3-5K-BwZ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pink_purple.png" translatesAutoresizingMaskIntoConstraints="NO" id="K44-1K-MfZ">
-                                <rect key="frame" x="57" y="80" width="263" height="149"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klx-MM-aBA">
+                                <rect key="frame" x="231" y="440" width="157" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <fontDescription key="fontDescription" name="Mohave" family="Mohave" pointSize="20"/>
+                                <color key="textColor" red="0.78902262449264526" green="0.37006917595863342" blue="0.30986785888671875" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="kerning">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9w-KJ-Sag">
+                                <rect key="frame" x="72" y="441" width="157" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Mohave" family="Mohave" pointSize="20"/>
+                                <color key="textColor" red="0.71458220480000001" green="0.49086502189999998" blue="0.7882931232" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="kerning">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -527,6 +551,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ofO-lu-tBs"/>
-        <segue reference="V1d-M0-iDQ"/>
+        <segue reference="D36-TY-h1o"/>
     </inferredMetricsTieBreakers>
 </document>
