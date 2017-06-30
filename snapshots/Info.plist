@@ -8,10 +8,11 @@
 	<string>Need camera access for uploading Images</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key><true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -37,6 +38,12 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Kollektif.tff</string>
+        <string>Mohave.otf</string>
+        <string>Mohave-SemiBold.otf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

@@ -32,22 +32,18 @@ class DetailViewController: UIViewController {
         postImageView.file = instaPost["media"] as? PFFile
         postImageView.loadInBackground()
         image = postImageView.image
-        
-        //convert PFFile to image
-        
-        
-        
+
         let text = instaPost?["caption"]
         let author = instaPost?["author"] as? PFUser
-        let time = instaPost?.createdAt
-            
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.A"
-        let myDate = time
+        if let date = instaPost?.createdAt {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .short
+            let dateString = dateFormatter.string(from: date)
+            dateLabel.text = "Posted on " + dateString
+        }
         
-        dateFormatter.dateFormat = "MMM dd, YYYY"
-        let somedateString = dateFormatter.string(from: myDate!)
-        dateLabel.text = "Posted on " + somedateString
+
         let username = author?.username
         usernameLabel.text = username
         captionLabel.text = text as? String
@@ -58,14 +54,9 @@ class DetailViewController: UIViewController {
         captionLabel.textColor = colors?.secondary
         dateLabel.textColor = colors?.detail
 
-        // Do any additional setup after loading the view.
     }
     
-    
   
-    
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

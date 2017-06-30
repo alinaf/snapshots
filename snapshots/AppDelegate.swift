@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let loginViewController = storyboard.instantiateViewController(withIdentifier: "logIn")
             self.window?.rootViewController = loginViewController
+            PFUser.logOutInBackground()
         }
 
         return true
