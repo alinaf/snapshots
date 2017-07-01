@@ -14,6 +14,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+       
+    
     var allPosts: [PFObject]?
    
     
@@ -51,8 +53,25 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         cell.usernameLabel.text = username
+        cell.topUsernameLabel.text = username
         cell.captionLabel.text = text as? String
     
+        // get profilePic for each cell
+        
+        let query = PFQuery(className: "ProfilePic")
+        query.includeKey("author")
+        query.whereKey("author", equalTo: author)
+        query.order(byDescending: "createdAt")
+        query.getFirstObjectInBackground { (post: PFObject?, error: Error?) in
+            if error == nil {
+                cell.profileImageView.file = post?["media"] as? PFFile
+                cell.profileImageView.loadInBackground()
+                
+            } else {
+                cell.profileImageView.image = #imageLiteral(resourceName: "profile_tab@3px")
+            }
+        }
+        
         
         return cell
     }

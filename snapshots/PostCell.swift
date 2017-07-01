@@ -14,6 +14,10 @@ class PostCell: UITableViewCell {
     
     @IBOutlet weak var captionLabel: UILabel!
     
+    @IBOutlet weak var profileImageView: PFImageView!
+    
+    @IBOutlet weak var topUsernameLabel: UILabel!
+    
     @IBOutlet weak var postImageView: PFImageView!
     
     @IBOutlet weak var usernameLabel: UILabel!
@@ -23,6 +27,8 @@ class PostCell: UITableViewCell {
         didSet {
             self.postImageView.file = instaPost["media"] as? PFFile
             self.postImageView.loadInBackground()
+            profileImageView.layer.cornerRadius = 20
+            profileImageView.clipsToBounds = true
         }
     }
     
